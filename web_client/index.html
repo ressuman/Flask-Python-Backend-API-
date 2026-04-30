@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus API — Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Cabinet+Grotesk:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Ambient background -->
+    <div class="bg-grid"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-mark">N</div>
+        <span class="logo-text">Nexus<em>API</em></span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group">
+          <span class="nav-group-label">Authentication</span>
+          <a class="nav-item active" data-page="login" href="#">
+            <span class="nav-icon">⟶</span> Login
+          </a>
+          <a class="nav-item" data-page="register" href="#">
+            <span class="nav-icon">⟶</span> Register
+          </a>
+          <a class="nav-item" data-page="logout" href="#">
+            <span class="nav-icon">⟶</span> Logout
+          </a>
+        </div>
+        <div class="nav-group">
+          <span class="nav-group-label">Users</span>
+          <a class="nav-item" data-page="users-list" href="#">
+            <span class="nav-icon">⟶</span> All Users
+          </a>
+          <a class="nav-item" data-page="user-get" href="#">
+            <span class="nav-icon">⟶</span> Get User
+          </a>
+          <a class="nav-item" data-page="user-update" href="#">
+            <span class="nav-icon">⟶</span> Update User
+          </a>
+          <a class="nav-item" data-page="user-delete" href="#">
+            <span class="nav-icon">⟶</span> Delete User
+          </a>
+        </div>
+        <div class="nav-group">
+          <span class="nav-group-label">Products</span>
+          <a class="nav-item" data-page="products-list" href="#">
+            <span class="nav-icon">⟶</span> All Products
+          </a>
+          <a class="nav-item" data-page="product-get" href="#">
+            <span class="nav-icon">⟶</span> Get Product
+          </a>
+          <a class="nav-item" data-page="product-create" href="#">
+            <span class="nav-icon">⟶</span> Add Product
+          </a>
+          <a class="nav-item" data-page="product-update" href="#">
+            <span class="nav-icon">⟶</span> Update Product
+          </a>
+          <a class="nav-item" data-page="product-delete" href="#">
+            <span class="nav-icon">⟶</span> Delete Product
+          </a>
+        </div>
+      </nav>
+
+      <div class="sidebar-token">
+        <div class="token-label">API TOKEN</div>
+        <input
+          type="password"
+          id="globalToken"
+          placeholder="Paste your token here"
+        />
+        <button class="btn-token-save" id="saveToken">SAVE</button>
+        <div class="token-status" id="tokenStatus"></div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <div class="topbar-title" id="topbarTitle">Login</div>
+        <div class="topbar-meta">
+          <span class="api-badge">API</span>
+          <span class="api-url"
+            >ressuman-flask-python-user-product.onrender.com</span
+          >
+        </div>
+      </header>
+
+      <div class="content" id="content">
+        <!-- Pages injected by JS -->
+      </div>
+
+      <!-- Response Panel -->
+      <div class="response-panel" id="responsePanel">
+        <div class="response-header">
+          <span class="response-title">Response</span>
+          <div class="response-meta">
+            <span class="response-status" id="responseStatus"></span>
+            <span class="response-time" id="responseTime"></span>
+            <button class="btn-clear" id="clearResponse">CLEAR</button>
+          </div>
+        </div>
+        <pre class="response-body" id="responseBody">
+// Your API response will appear here...</pre
+        >
+      </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/pages.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
